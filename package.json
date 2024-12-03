@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "npx tsx index.ts",
+    "build:rinkeby": "cross-env NODE_ENV=development npm run clear && vue-cli-service build",
+    "build": "cross-env NODE_ENV=production npm run clear && vue-cli-service build",
+    "start": "http-server dist",
+    "clear": "rimraf ./dist",
+    "lint": "eslint --ext .js --ext .jsx src/",
+    "lint-fix": "eslint --fix --ext .js --ext .jsx src/",
+    "prettier": "prettier --check --write --config .prettierrc.json 'src/*.{vue,js}'",
+    "report": "npm run build -- --report"
+  },
+  "engines": {
+    "esmodule": "esm"
+  },
+  "dependencies": {
+    "@wormhole-foundation/sdk": "^1.1.1",
+    "dotenv": "^16.4.6",
+    "npx": "^10.2.2",
+    "tsx": "^4.19.2"
+  }
+}
